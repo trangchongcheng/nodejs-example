@@ -19,4 +19,7 @@ VARS_TO_REMOVE=(
 
 # Xóa các dòng liên quan đến các biến môi trường từ ~/.bash_profile
 for VAR in "${VARS_TO_REMOVE[@]}"; do
-    sed -i "/export $VAR/d" "$B
+    sed -i "/export $VAR/d" "$BASH_PROFILE"
+done
+
+echo "Đã xóa các biến môi trường khỏi $BASH_PROFILE và tạo bản sao lưu tại ${BASH_PROFILE}.backup"
